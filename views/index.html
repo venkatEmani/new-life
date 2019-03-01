@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+    <div class="container">
+        <div class="media-body"></div>
+            <div class="u-lg-avatar mr-4">
+                    <img class="img-fluid rounded-circle" src="data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAA8AAD/4QMsaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wLwA8P3hwYWNrZXQgYmVnaW49Iu+7vyIgaWQ9Ilc1TTBNcENlaGlIenJlU3pOVGN6a2M5ZCI/PiA8eDp4bXBtZXRhIHhtbG5zOng9ImFkb2JlOm5zOm1ldGEvIiB4OnhtcHRrPSJBZG9iZSBYTVAgQ29yZSA1LjYtYzE0MiA3OS4xNjA5MjQsIDIwMTcvMDcvMTMtMDE6MDY6MzkgICAgICAgICI+IDxyZGY6UkRGIHhtbG5zOnJkZj0iaHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyI+IDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PSIiIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjNDNjAxNDQ1NUY2RjExRThCMEJDODA5RTUwMEZEMDBFIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjNDNjAxNDQ0NUY2RjExRThCMEJDODA5RTUwMEZEMDBFIiB4bXA6Q3JlYXRvclRvb2w9IkFkb2JlIFBob3Rvc2hvcCBDQyAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjgyQUExMTE0MzEzMjExRTRCQTYyRjZDNDE0QjYzMTc4IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjgyQUExMTE1MzEzMjExRTRCQTYyRjZDNDE0QjYzMTc4Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+/+4ADkFkb2JlAGTAAAAAAf/bAIQABgQEBAUEBgUFBgkGBQYJCwgG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" alt="Image Description">
+                </div>
+        <div class="row mb-5">
+            <div class="col-lg-6 mb-3 mb-lg-0">
+                <h1 class="h4 mb-1">UI and UX designer</h1>
+
+                <!-- Review -->
+                <span class="text-warning font-size-1">
+                    <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span>
+                    <span class="fas fa-star"></span>
+                </span>
+                <span class="font-weight-semi-bold ml-2">4.91</span>
+                <small class="text-muted">(12k+ reviews)</small>
+                <!-- End Review -->
+            </div>
+        </div>
+    </div>
+
+
+            <div class="col-lg-6 text-lg-right">
+                <div class="d-flex justify-content-md-end align-items-center">
+                    <!-- Bookmark -->
+                    <div class="d-inline-block mr-2">
+                        <i class="far fa-bookmark"></i>
+                    </div>
+                    <!-- End Bookmark -->
+
+                    <a class="btn btn-sm btn-soft-primary transition-3d-hover" href="#">Apply On Company Site</a>
+                </div>
+            </div>
+        </div>
+        <div class="space-bottom-1">
+                <div class="small text-right text-secondary">
+                    <span class="fas fa-eye mr-1"></span>
+                    Viewed 3,910 times
+                </div>
+            </div>
+    </div>
+    
+    <hr class="my-4">
+
+
+    </div>
+    <div class="container">
+        <div class="border-bottom space-2">
+            <div class="row">
+                <div class="col-lg-8 mb-9 mb-lg-0">
+                    <div class="mb-4">
+                        <h2 class="h5">Job Description</h2>
+                        <p class="text-muted font-size-1">Posted 5 hours ago</p>
+                    </div>
+
+                    <div class="mb-7">
+                        <p>The Manager, Business Analysis leads a small team of professional Business Analysts that
+                            document business requirements for use in both custom and 3rd party technology solutions.
+                            The Manager, Business Analysis supervises their business analysts as part of the System
+                            Development Lifecycle (SDLC) methodology and must provide weekly status reports to their
+                            business contacts in addition to maintain internal updates to co-workers and management
+                            within the EPMO and Information Technology (IT) departments.</p>
+
+                        <p>Clearly and effectively conveys and/or presents information verbally; summarizes what was
+                            heard to mitigate miscommunication; Shares ideas and perspectives and encourages others to
+                            do the same; Informs others involved in a project of new developments; Disseminates
+                            information to other employees.</p>
+                    </div>
+
+                    <!-- Title -->
+                    <div class="mb-4">
+                        <h3 class="h5">Skills:</h3>
+                    </div>
+                    <!-- End Title -->
+
+                    <!-- Skills -->
+                    <ul class="list-inline mb-7">
+                        <li class="list-inline-item pb-3">
+                            <a class="btn btn-xs btn-gray btn-pill" href="#">PHP</a>
+                        </li>
+                        <li class="list-inline-item pb-3">
+                            <a class="btn btn-xs btn-gray btn-pill" href="#">Developer</a>
+                        </li>
+                        <li class="list-inline-item pb-3">
+                            <a class="btn btn-xs btn-gray btn-pill" href="#">JavaScript</a>
+                        </li>
+                        <li class="list-inline-item pb-3">
+                            <a class="btn btn-xs btn-gray btn-pill" href="#">CSS3</a>
+                        </li>
+                        <li class="list-inline-item pb-3">
+                            <a class="btn btn-xs btn-gray btn-pill" href="#">HTML5</a>
+                        </li>
+                        <li class="list-inline-item pb-3">
+                            <a class="btn btn-xs btn-gray btn-pill" href="#">Bootstrap</a>
+                        </li>
+                    </ul>
+                    <!-- End Skills -->
+
+                    <!-- Title -->
+                    <div class="mb-4">
+                        <h3 class="h5">Responsibilities:</h3>
+                    </div>
+                    <!-- End Title -->
+
+                    <!-- List -->
+                    <ul class="list-unstyled mb-7">
+                        <li class="py-3">
+                            <div class="media">
+                                <span class="btn btn-xs btn-icon btn-soft-success rounded-circle mr-3">
+                                    <span class="fas fa-arrow-right btn-icon__inner"></span>
+                                </span>
+                                <div class="media-body text-secondary">
+                                    Work with our leadership team to drive strategic planning and prioritization
+                                </div>
+                            </div>
+                        </li>
+                        <li class="py-3">
+                            <div class="media">
+                                <span class="btn btn-xs btn-icon btn-soft-success rounded-circle mr-3">
+                                    <span class="fas fa-arrow-right btn-icon__inner"></span>
+                                </span>
+                                <div class="media-body text-secondary">
+                                    Partner with cross-functional teams to drive flawless execution of global
+                                    initiatives, including the definition and rollout of our international plan
+                                </div>
+                            </div>
+                        </li>
+                        <li class="py-3">
+                            <div class="media">
+                                <span class="btn btn-xs btn-icon btn-soft-success rounded-circle mr-3">
+                                    <span class="fas fa-arrow-right btn-icon__inner"></span>
+                                </span>
+                                <div class="media-body text-secondary">
+                                    Own the end-to-end process: build work plans, synthesize relevant data, lead
+                                    analyses and develop recommendations
+                                </div>
+                            </div>
+                        </li>
+                        <li class="py-3">
+                            <div class="media">
+                                <span class="btn btn-xs btn-icon btn-soft-success rounded-circle mr-3">
+                                    <span class="fas fa-arrow-right btn-icon__inner"></span>
+                                </span>
+                                <div class="media-body text-secondary">
+                                    Arm our go-to-market teams with a deep knowledge of the competition
+                                </div>
+                            </div>
+                        </li>
+                        <li class="py-3">
+                            <div class="media">
+                                <span class="btn btn-xs btn-icon btn-soft-success rounded-circle mr-3">
+                                    <span class="fas fa-arrow-right btn-icon__inner"></span>
+                                </span>
+                                <div class="media-body text-secondary">
+                                    Communicate solutions confidently and effectively across Front
+                                </div>
+                            </div>
+                        </li>
+                        <li class="py-3">
+                            <div class="media">
+                                <span class="btn btn-xs btn-icon btn-soft-success rounded-circle mr-3">
+                                    <span class="fas fa-arrow-right btn-icon__inner"></span>
+                                </span>
+                                <div class="media-body text-secondary">
+                                    Build a consultative relationship across the organization, and meet with strategic
+                                    partners that align with our highest priorities
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- End List -->
+
+                    <!-- Title -->
+                    <div class="mb-4">
+                        <h3 class="h5">Requirements:</h3>
+                    </div>
+                    <!-- End Title -->
+
+                    <!-- List -->
+                    <ul class="list-unstyled mb-7">
+                        <li class="py-3">
+                            <div class="media">
+                                <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
+                                    <span class="fas fa-check btn-icon__inner"></span>
+                                </span>
+                                <div class="media-body text-secondary">
+                                    5+ years of related work experience at a high-performing technology company or
+                                    management consulting; enterprise experience strongly preferred
+                                </div>
+                            </div>
+                        </li>
+                        <li class="py-3">
+                            <div class="media">
+                                <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
+                                    <span class="fas fa-check btn-icon__inner"></span>
+                                </span>
+                                <div class="media-body text-secondary">
+                                    Advanced analytical skills (including data modeling) and business insight
+                                </div>
+                            </div>
+                        </li>
+                        <li class="py-3">
+                            <div class="media">
+                                <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
+                                    <span class="fas fa-check btn-icon__inner"></span>
+                                </span>
+                                <div class="media-body text-secondary">
+                                    Experience dealing with unstructured business issues and successfully leading teams
+                                    to resolve these issues
+                                </div>
+                            </div>
+                        </li>
+                        <li class="py-3">
+                            <div class="media">
+                                <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
+                                    <span class="fas fa-check btn-icon__inner"></span>
+                                </span>
+                                <div class="media-body text-secondary">
+                                    Ability to build clear and concise presentations, and communicate effectively with
+                                    managers and executives
+                                </div>
+                            </div>
+                        </li>
+                        <li class="py-3">
+                            <div class="media">
+                                <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
+                                    <span class="fas fa-check btn-icon__inner"></span>
+                                </span>
+                                <div class="media-body text-secondary">
+                                    Strong project management skills
+                                </div>
+                            </div>
+                        </li>
+                        <li class="py-3">
+                            <div class="media">
+                                <span class="btn btn-xs btn-icon btn-soft-primary rounded-circle mr-3">
+                                    <span class="fas fa-check btn-icon__inner"></span>
+                                </span>
+                                <div class="media-body text-secondary">
+                                    BA/BS degree from a credible university. MBA a plus
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- End List -->
+
+                    <!-- Title -->
+                    <div class="mb-4">
+                        <h3 class="h5">Share:</h3>
+                    </div>
+                    <!-- End Title -->
+
+                    <!-- Social Networks -->
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item">
+                            <a class="btn btn-icon btn-soft-secondary btn-bg-transparent" href="#">
+                                <span class="fab fa-facebook-f btn-icon__inner"></span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn btn-icon btn-soft-secondary btn-bg-transparent" href="#">
+                                <span class="fab fa-google btn-icon__inner"></span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn btn-icon btn-soft-secondary btn-bg-transparent" href="#">
+                                <span class="fab fa-twitter btn-icon__inner"></span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn btn-icon btn-soft-secondary btn-bg-transparent" href="#">
+                                <span class="fab fa-pinterest btn-icon__inner"></span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn btn-icon btn-soft-secondary btn-bg-transparent" href="#">
+                                <span class="fab fa-get-pocket btn-icon__inner"></span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn btn-icon btn-soft-secondary btn-bg-transparent" href="#">
+                                <span class="fab fa-telegram-plane btn-icon__inner"></span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="btn btn-icon btn-soft-secondary btn-bg-transparent" href="#">
+                                <span class="fab fa-slack-hash btn-icon__inner"></span>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- End Social Networks -->
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="pl-lg-4">
+                        <!-- Sidebar Info -->
+                        <div class="card border-0 shadow-sm mb-3">
+                            <!-- Header -->
+                            <header id="SVGwave1BottomShapeID1"
+                                class="card-header border-bottom-0 bg-primary text-white p-0" style="">
+                                <div class="pt-5 px-5">
+                                    <h3 class="h5">Job Summary</h3>
+                                </div>
+
+                                <figure class="ie-wave-1-bottom mt-n5">
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                                        preserveAspectRatio="none" x="0px" y="0px" viewBox="0 0 300 100"
+                                        style="enable-background:new 0 0 300 100;" xml:space="preserve"
+                                        class="injected-svg js-svg-injector" data-parent="#SVGwave1BottomShapeID1">
+                                        <style type="text/css">
+                                            .wave-bottom-1-0 {
+                                                clip-path: url(#waveBottom1ID2);
+                                                fill: #FFFFFF;
+                                            }
+
+                                            .wave-bottom-1-1 {
+                                                clip-path: url(#waveBottom1ID2);
+                                                fill: #FFFFFF;
+                                                fill-opacity: 0;
+                                            }
+
+                                            .wave-bottom-1-2 {
+                                                clip-path: url(#waveBottom1ID2);
+                                                fill: #FFFFFF;
+                                            }
+                                        </style>
+                                        <g>
+                                            <defs>
+                                                <rect id="waveBottom1ID1" width="300" height="100"></rect>
+                                            </defs>
+                                            <clipPath id="waveBottom1ID2">
+                                                <use xlink:href="#waveBottom1ID1" style="overflow:visible;"></use>
+                                            </clipPath>
+                                            <path class="wave-bottom-1-0 fill-white" opacity=".4"
+                                                d="M10.9,63.9c0,0,42.9-34.5,87.5-14.2c77.3,35.1,113.3-2,146.6-4.7C293.7,41,315,61.2,315,61.2v54.4H10.9V63.9z">
+                                            </path>
+                                            <path class="wave-bottom-1-0 fill-white" opacity=".4"
+                                                d="M-55.7,64.6c0,0,42.9-34.5,87.5-14.2c77.3,35.1,113.3-2,146.6-4.7c48.7-4.1,69.9,16.2,69.9,16.2v54.4H-55.7   V64.6z">
+                                            </path>
+                                            <path class="wave-bottom-1-1 fill-white" opacity=".4"
+                                                d="M23.4,118.3c0,0,48.3-68.9,109.1-68.9c65.9,0,98,67.9,98,67.9v3.7H22.4L23.4,118.3z">
+                                            </path>
+                                            <path class="wave-bottom-1-2 fill-white"
+                                                d="M-54.7,83c0,0,56-45.7,120.3-27.8c81.8,22.7,111.4,6.2,146.6-4.7c53.1-16.4,104,36.9,104,36.9l1.3,36.7l-372-3   L-54.7,83z">
+                                            </path>
+                                        </g>
+                                    </svg>
+                                </figure>
+                            </header>
+                            <!-- End Header -->
+
+                            <!-- Content -->
+                            <div class="card-body pt-1 px-5 pb-5">
+                                <!-- Icon Block -->
+                                <div class="media mb-3">
+                                    <div class="min-width-4 text-center text-primary mt-1 mr-3">
+                                        <span class="fas fa-globe"></span>
+                                    </div>
+                                    <div class="media-body">
+                                        <a class="font-weight-medium" href="#">www.slack.com</a>
+                                        <small class="d-block text-secondary">Website</small>
+                                    </div>
+                                </div>
+                                <!-- End Icon Block -->
+
+                                <!-- Icon Block -->
+                                <div class="media mb-3">
+                                    <div class="min-width-4 text-center text-primary mt-1 mr-3">
+                                        <span class="fas fa-map-marked-alt"></span>
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="d-block font-weight-medium">London, UK</span>
+                                        <small class="d-block text-secondary">Location</small>
+                                    </div>
+                                </div>
+                                <!-- End Icon Block -->
+
+                                <!-- Icon Block -->
+                                <div class="media mb-3">
+                                    <div class="min-width-4 text-center text-primary mt-1 mr-3">
+                                        <span class="fas fa-clock"></span>
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="d-block font-weight-medium">Full time</span>
+                                        <small class="d-block text-secondary">Job type</small>
+                                    </div>
+                                </div>
+                                <!-- End Icon Block -->
+
+                                <!-- Icon Block -->
+                                <div class="media mb-3">
+                                    <div class="min-width-4 text-center text-primary mt-1 mr-3">
+                                        <span class="fas fa-business-time"></span>
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="d-block font-weight-medium">1 to 3 months</span>
+                                        <small class="d-block text-secondary">Project length</small>
+                                    </div>
+                                </div>
+                                <!-- End Icon Block -->
+
+                                <!-- Icon Block -->
+                                <div class="media mb-3">
+                                    <div class="min-width-4 text-center text-primary mt-1 mr-3">
+                                        <span class="fas fa-money-bill-alt"></span>
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="d-block font-weight-medium">Salary</span>
+                                        <small class="d-block text-secondary">$28k - $32k</small>
+                                    </div>
+                                </div>
+                                <!-- End Icon Block -->
+
+                                <!-- Icon Block -->
+                                <div class="media mb-3">
+                                    <div class="min-width-4 text-center text-primary mt-1 mr-3">
+                                        <span class="fas fa-briefcase"></span>
+                                    </div>
+                                    <div class="media-body">
+                                        <span class="d-block font-weight-medium">Entry level</span>
+                                        <small class="d-block text-secondary">We are looking for freelancers with the
+                                            lowest rates.</small>
+                                    </div>
+                                </div>
+                                <!-- End Icon Block -->
+                            </div>
+                            <!-- End Content -->
+                        </div>
+                        <!-- End Sidebar Info -->
+
+                        <!-- Link -->
+                        <div class="text-center mb-9">
+                            <a class="text-muted small" href="#">
+                                <small class="fas fa-flag mr-1"></small>
+                                Report this job
+                            </a>
+                        </div>
+                        <!-- End Link -->
+
+                        <!-- Company About -->
+                        <div class="mb-4">
+                            <img class="u-clients mb-4" src="../views/download.jpg"
+                                alt="Airbnb">
+                            <h4 class="h6">About</h4>
+                            <p class="font-size-1 mb-0">Our Mission is to deliver a high quality, technology-based
+                                education that provides the skills and knowledge students need for success.</p>
+                            <a class="font-size-1" href="#">View company profile</a>
+                        </div>
+                        <!-- End Company About -->
+
+                        <!-- Company Contacts -->
+                        <div class="mb-7">
+                            <h4 class="h6">Contacts</h4>
+                            <address class="text-secondary font-size-1">
+                                <span class="d-block mb-2">44-46 Morningside Road <br> Edinburgh Scotland EH10
+                                    4BF</span>
+                                <span class="d-block mb-2">Email: <a
+                                        href="mailto:careers@airbnb.com">careers@airbnb.com</a></span>
+                                <span class="d-block">Phone: <a class="text-dark"
+                                        href="tel:1-855-424-7262">1-855-424-7262</a></span>
+                            </address>
+                        </div>
+                        <!-- End Company Contacts -->
+
+                        <!-- Subscribe -->
+                        <div id="stickyBlockStartPoint">
+                            <div class="js-sticky-block bg-primary text-white shadow-primary-lg text-center shadow rounded p-5"
+                                data-parent="#stickyBlockStartPoint" data-sticky-view="lg"
+                                data-start-point="#stickyBlockStartPoint" data-end-point="#stickyBlockEndPoint"
+                                data-offset-top="24" data-offset-bottom="0">
+                                <h3 class="h5">Get email alerts for similar jobs</h3>
+                                <p class="text-white-70 mb-4">We have 1000+ similar open jobs.</p>
+
+                                <!-- Form Input -->
+                                <form class="js-validate js-form-message" novalidate="novalidate">
+                                    <label class="sr-only" for="subscribeSrEmail">Your email address</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" name="name" id="subscribeSrEmail"
+                                            required="" placeholder="Your email address"
+                                            aria-label="Enter your email address"
+                                            aria-describedby="subscribeEmailButton"
+                                            data-msg="Please enter a valid email address."
+                                            data-error-class="u-has-error" data-success-class="u-has-success">
+                                        <div class="input-group-append">
+                                            <button type="submit" class="btn btn-success" id="subscribeEmailButton">
+                                                <span class="fas fa-angle-right"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <!-- End Form Input -->
+                            </div>
+                        </div>
+                        <!-- End Subscribe -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sticky Block End Point -->
+            <div id="stickyBlockEndPoint"></div>
+        </div>
+    </div>
+    <div class="container space-2">
+        <!-- Title -->
+        <div class="w-md-80 w-lg-50 text-center mx-md-auto mb-9">
+            <h2 class="font-weight-medium">Similar Jobs</h2>
+            <p>The largest community on the web to find and list jobs that aren't restricted by commutes or a specific
+                location.</p>
+        </div>
+        <!-- End Title -->
+
+        <!-- Jobs -->
+        <div class="card-deck d-block d-lg-flex">
+            <!-- Item -->
+            <div class="card mb-5 mb-lg-0">
+                <div class="card-body p-4">
+                    <!-- Header -->
+                    <div class="d-flex align-items-center mb-5">
+                        <!-- Rating -->
+                        <div class="position-relative">
+                            <a id="rating7DropdownInvoker" class="btn btn-xs btn-soft-warning btn-pill"
+                                href="javascript:;" role="button" aria-controls="rating7Dropdown" aria-haspopup="true"
+                                aria-expanded="false" data-unfold-event="hover" data-unfold-target="#rating7Dropdown"
+                                data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300"
+                                data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp"
+                                data-unfold-animation-out="fadeOut">
+                                4.5
+                            </a>
+
+                            <div id="rating7Dropdown"
+                                class="dropdown-menu dropdown-unfold p-3 u-unfold--css-animation u-unfold--hidden fadeOut"
+                                aria-labelledby="rating7DropdownInvoker"
+                                style="width: 190px; animation-duration: 300ms; left: 0px;">
+                                <div class="d-flex align-items-center mb-2">
+                                    <span class="text-warning mr-2">4.5</span>
+                                    <ul class="list-inline mb-0">
+                                        <li class="list-inline-item text-warning">
+                                            <span class="fas fa-star"></span>
+                                            <span class="fas fa-star"></span>
+                                            <span class="fas fa-star"></span>
+                                            <span class="fas fa-star"></span>
+                                            <span class="fas fa-star-half-alt"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <p class="text-dark mb-0">Overal Rating</p>
+                                <p class="mb-0">Based on 427 reviews</p>
+                            </div>
+                        </div>
+                        <!-- End Rating -->
+
+                        <!-- Bookmark -->
+                        <div class="ml-auto">
+                            <div class="bookmark-checkbox" data-toggle="tooltip" data-placement="top" title=""
+                                data-original-title="Save Job">
+                                <input type="checkbox" class="bookmark-checkbox-input" id="bookmark7">
+                                <label class="bookmark-checkbox-label" for="bookmark7"></label>
+                            </div>
+                        </div>
+                        <!-- End Bookmark -->
+                    </div>
+                    <!-- End Header -->
+
+                    <div class="text-center">
+                        <div class="u-lg-avatar mx-auto mb-3">
+                            <img class="img-fluid" src="../views/img8.jpg" alt="Image Description">
+                        </div>
+
+                        <!-- Title -->
+                        <div class="mb-4">
+                            <h3 class="h5 mb-1">
+                                <a href="job-description.html">C# Developer</a>
+                            </h3>
+                            <ul class="list-inline font-size-1 text-muted">
+                                <li class="list-inline-item">
+                                    <a class="link-muted" href="company-profile.html">Paypal Inc</a>
+                                </li>
+                                <li class="list-inline-item text-muted">•</li>
+                                <li class="list-inline-item">Office</li>
+                            </ul>
+                        </div>
+                        <!-- End Title -->
+
+                        <p>We looking for a talented Junior Front End Web Developer.</p>
+                    </div>
+                </div>
+
+                <div class="card-footer text-center py-4">
+                    <!-- Location & Salary -->
+                    <div class="row align-items-center">
+                        <div class="col-6 u-ver-divider">
+                            <h4 class="small text-secondary mb-0">Location</h4>
+                            <small class="fas fa-map-marker-alt text-secondary align-middle mr-1"></small>
+                            <span class="align-middle">Florida, US</span>
+                        </div>
+                        <div class="col-6">
+                            <h4 class="small text-secondary mb-0">Salary</h4>
+                            <small class="fas fa-dollar-sign text-secondary align-middle mr-1"></small>
+                            <span class="align-middle">40k - 49k</span>
+                        </div>
+                    </div>
+                    <!-- End Location & Salary -->
+                </div>
+            </div>
+            <!-- End Item -->
+
+            <!-- Item -->
+            <div class="card mb-5 mb-lg-0">
+                <div class="card-body p-4">
+                    <!-- Header -->
+                    <div class="d-flex align-items-center mb-5">
+                        <!-- Rating -->
+                        <div class="position-relative">
+                            <a id="rating8DropdownInvoker" class="btn btn-xs btn-soft-warning btn-pill"
+                                href="javascript:;" role="button" aria-controls="rating8Dropdown" aria-haspopup="true"
+                                aria-expanded="false" data-unfold-event="hover" data-unfold-target="#rating8Dropdown"
+                                data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300"
+                                data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp"
+                                data-unfold-animation-out="fadeOut">
+                                3.9
+                            </a>
+
+                            <div id="rating8Dropdown"
+                                class="dropdown-menu dropdown-unfold p-3 u-unfold--css-animation u-unfold--hidden fadeOut"
+                                aria-labelledby="rating8DropdownInvoker"
+                                style="width: 190px; animation-duration: 300ms; left: 0px;">
+                                <div class="d-flex align-items-center mb-2">
+                                    <span class="text-warning mr-2">3.9</span>
+                                    <ul class="list-inline mb-0">
+                                        <li class="list-inline-item text-warning">
+                                            <span class="fas fa-star"></span>
+                                            <span class="fas fa-star"></span>
+                                            <span class="fas fa-star-half-alt"></span>
+                                            <span class="far fa-star"></span>
+                                            <span class="far fa-star"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <p class="text-dark mb-0">Overal Rating</p>
+                                <p class="mb-0">Based on 11 reviews</p>
+                            </div>
+                        </div>
+                        <!-- End Rating -->
+
+                        <!-- Bookmark -->
+                        <div class="ml-auto">
+                            <div class="bookmark-checkbox" data-toggle="tooltip" data-placement="top" title=""
+                                data-original-title="Save Job">
+                                <input type="checkbox" class="bookmark-checkbox-input" id="bookmark8">
+                                <label class="bookmark-checkbox-label" for="bookmark8"></label>
+                            </div>
+                        </div>
+                        <!-- End Bookmark -->
+                    </div>
+                    <!-- End Header -->
+
+                    <div class="text-center">
+                        <div class="u-lg-avatar mx-auto mb-3">
+                            <img class="img-fluid" src="../views/img10.jpg" alt="Image Description">
+                        </div>
+
+                        <!-- Title -->
+                        <div class="mb-4">
+                            <h3 class="h5 mb-1">
+                                <a href="job-description.html">Database Analyst</a>
+                            </h3>
+                            <ul class="list-inline font-size-1 text-muted">
+                                <li class="list-inline-item">
+                                    <a class="link-muted" href="company-profile.html">Airbnb Inc</a>
+                                </li>
+                                <li class="list-inline-item text-muted">•</li>
+                                <li class="list-inline-item">Office</li>
+                            </ul>
+                        </div>
+                        <!-- End Title -->
+
+                        <p>Executes the building and maintaining of websites and apps.</p>
+                    </div>
+                </div>
+
+                <div class="card-footer text-center py-4">
+                    <!-- Location & Salary -->
+                    <div class="row align-items-center">
+                        <div class="col-6 u-ver-divider">
+                            <h4 class="small text-secondary mb-0">Location</h4>
+                            <small class="fas fa-map-marker-alt text-secondary align-middle mr-1"></small>
+                            <span class="align-middle">Sao Paulo, BR</span>
+                        </div>
+                        <div class="col-6">
+                            <h4 class="small text-secondary mb-0">Salary</h4>
+                            <small class="fas fa-dollar-sign text-secondary align-middle mr-1"></small>
+                            <span class="align-middle">10k - 25k</span>
+                        </div>
+                    </div>
+                    <!-- End Location & Salary -->
+                </div>
+            </div>
+            <!-- End Item -->
+
+            <!-- Item -->
+            <div class="card">
+                <div class="card-body p-4">
+                    <!-- Header -->
+                    <div class="d-flex align-items-center mb-5">
+                        <!-- Rating -->
+                        <div class="position-relative">
+                            <a id="rating9DropdownInvoker" class="btn btn-xs btn-soft-warning btn-pill"
+                                href="javascript:;" role="button" aria-controls="rating9Dropdown" aria-haspopup="true"
+                                aria-expanded="false" data-unfold-event="hover" data-unfold-target="#rating9Dropdown"
+                                data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300"
+                                data-unfold-hide-on-scroll="true" data-unfold-animation-in="slideInUp"
+                                data-unfold-animation-out="fadeOut">
+                                4.2
+                            </a>
+
+                            <div id="rating9Dropdown"
+                                class="dropdown-menu dropdown-unfold p-3 u-unfold--css-animation u-unfold--hidden fadeOut"
+                                aria-labelledby="rating9DropdownInvoker"
+                                style="width: 190px; animation-duration: 300ms; left: 0px;">
+                                <div class="d-flex align-items-center mb-2">
+                                    <span class="text-warning mr-2">4.2</span>
+                                    <ul class="list-inline mb-0">
+                                        <li class="list-inline-item text-warning">
+                                            <span class="fas fa-star"></span>
+                                            <span class="fas fa-star"></span>
+                                            <span class="fas fa-star"></span>
+                                            <span class="fas fa-star"></span>
+                                            <span class="far fa-star"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <p class="text-dark mb-0">Overal Rating</p>
+                                <p class="mb-0">Based on 61 reviews</p>
+                            </div>
+                        </div>
+                        <!-- End Rating -->
+
+                        <!-- Bookmark -->
+                        <div class="ml-auto">
+                            <div class="bookmark-checkbox" data-toggle="tooltip" data-placement="top" title=""
+                                data-original-title="Save Job">
+                                <input type="checkbox" class="bookmark-checkbox-input" id="bookmark9">
+                                <label class="bookmark-checkbox-label" for="bookmark9"></label>
+                            </div>
+                        </div>
+                        <!-- End Bookmark -->
+                    </div>
+                    <!-- End Header -->
+
+                    <div class="text-center">
+                        <div class="u-lg-avatar mx-auto mb-3">
+                            <img class="img-fluid" src="../views/img12.png" alt="Image Description">
+                        </div>
+
+                        <!-- Title -->
+                        <div class="mb-4">
+                            <h3 class="h5 mb-1">
+                                <a href="job-description.html">Software Engineer</a>
+                            </h3>
+                            <ul class="list-inline font-size-1 text-muted">
+                                <li class="list-inline-item">
+                                    <a class="link-muted" href="company-profile.html">Atlassian</a>
+                                </li>
+                                <li class="list-inline-item text-muted">•</li>
+                                <li class="list-inline-item">Office</li>
+                            </ul>
+                        </div>
+                        <!-- End Title -->
+
+                        <p>Participates in all aspects of full life cycle application development.</p>
+                    </div>
+                </div>
+
+                <div class="card-footer text-center py-4">
+                    <!-- Location & Salary -->
+                    <div class="row align-items-center">
+                        <div class="col-6 u-ver-divider">
+                            <h4 class="small text-secondary mb-0">Location</h4>
+                            <small class="fas fa-map-marker-alt text-secondary align-middle mr-1"></small>
+                            <span class="align-middle">LA, US</span>
+                        </div>
+                        <div class="col-6">
+                            <h4 class="small text-secondary mb-0">Salary</h4>
+                            <small class="fas fa-dollar-sign text-secondary align-middle mr-1"></small>
+                            <span class="align-middle">24k - 31k</span>
+                        </div>
+                    </div>
+                    <!-- End Location & Salary -->
+                </div>
+            </div>
+            <!-- End Item -->
+        </div>
+        <!-- End Jobs -->
+    </div>
+   
+</body>
+
+</html>
+<style>
+    .media-body {
+    -ms-flex: 1;
+    flex: 1;
+}
+    .img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+    .btn-soft-primary {
+        color: #377dff;
+        background: rgba(55, 125, 255, 0.1);
+        border-color: transparent;
+    }
+
+    .btn-soft-primary:hover {
+        color: white;
+        background-color: #377dff
+    }
+
+    .btn-sm,
+    .btn-group-sm>.btn {
+        padding: 0.625rem 1.125rem;
+        font-size: 0.875rem;
+        line-height: 1.5;
+        border-radius: 0.125rem;
+    }
+
+    .container {
+        max-width: 1140px;
+    }
+    .btn-icon.btn-xs {
+    font-size: 0.75rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+.btn-soft-success {
+    color: #00c9a7;
+    background: rgba(0, 201, 167, 0.1);
+    border-color: transparent;
+}
+.fa-arrow-right {
+    top: -3px;
+    position: relative;
+    left: -3px
+}
+.u-lg-avatar {
+    width: 5rem;
+    height: 5rem;
+}
+.btn-soft-warning {
+    color: #ffc107;
+    background: rgba(255, 193, 7, 0.1);
+    border-color: transparent;
+}
+.btn-xs {
+    font-size: 0.6875rem;
+    font-weight: 400;
+    padding: 0.4375rem 0.9375rem;
+}
+.u-clients {
+    width: 100%;
+    max-width: 3rem;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+</style>
